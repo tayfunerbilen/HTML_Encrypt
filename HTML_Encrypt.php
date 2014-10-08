@@ -48,7 +48,7 @@ class HTML_Encrypt
      */
     public static function encrypt( $html )
     {
-        $hex = '<script type="text/javascript">document.write(decodeURI("';
+        $hex = '<script type="text/javascript">document.write(unescape("';
         $characters = self::utf8_split($html);
         foreach ( $characters as $character ){
             $hex .= '%' . dechex(self::utf8_ord($character));
